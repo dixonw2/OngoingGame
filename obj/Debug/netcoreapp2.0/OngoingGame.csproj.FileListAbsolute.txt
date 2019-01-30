@@ -1,0 +1,13 @@
+/Users/Wyatt/VSCode/OngoingGame/bin/Debug/netcoreapp2.0/NUnit3.TestAdapter.dll
+/Users/Wyatt/VSCode/OngoingGame/bin/Debug/netcoreapp2.0/nunit.engine.netstandard.dll
+/Users/Wyatt/VSCode/OngoingGame/bin/Debug/netcoreapp2.0/Mono.Cecil.dll
+/Users/Wyatt/VSCode/OngoingGame/bin/Debug/netcoreapp2.0/OngoingGame.deps.json
+/Users/Wyatt/VSCode/OngoingGame/bin/Debug/netcoreapp2.0/OngoingGame.runtimeconfig.json
+/Users/Wyatt/VSCode/OngoingGame/bin/Debug/netcoreapp2.0/OngoingGame.runtimeconfig.dev.json
+/Users/Wyatt/VSCode/OngoingGame/bin/Debug/netcoreapp2.0/OngoingGame.dll
+/Users/Wyatt/VSCode/OngoingGame/bin/Debug/netcoreapp2.0/OngoingGame.pdb
+/Users/Wyatt/VSCode/OngoingGame/obj/Debug/netcoreapp2.0/OngoingGame.csproj.CoreCompileInputs.cache
+/Users/Wyatt/VSCode/OngoingGame/obj/Debug/netcoreapp2.0/OngoingGame.AssemblyInfoInputs.cache
+/Users/Wyatt/VSCode/OngoingGame/obj/Debug/netcoreapp2.0/OngoingGame.AssemblyInfo.cs
+/Users/Wyatt/VSCode/OngoingGame/obj/Debug/netcoreapp2.0/OngoingGame.dll
+/Users/Wyatt/VSCode/OngoingGame/obj/Debug/netcoreapp2.0/OngoingGame.pdb
