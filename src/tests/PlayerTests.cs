@@ -3,9 +3,15 @@ using NUnit.Framework;
 
 namespace OngoingGame {
     public class PlayerTests {
+        Player sut = new Player("test");
         [TestCase]
-        public void GivenNewPlayer_WhenGetAttack_Then5() {
-            Assert.AreEqual(5, new Player("sut").Attack);
+        public void GivenNewPlayer_WhenGetAttack_Then10() {
+            Assert.AreEqual(10, sut.Attack);
+        }
+
+        [TestCase]
+        public void GivenNewPlayer_WhenGetDefense_Then10() {
+            Assert.AreEqual(10, sut.Defense);
         }
     }
 }

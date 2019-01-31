@@ -1,6 +1,6 @@
 ﻿using System;
 namespace OngoingGame {
-    class Program {
+    public class Program {
         static void Main(string[] args) {
 
             Humanoid player = new Player("Wyatt");
