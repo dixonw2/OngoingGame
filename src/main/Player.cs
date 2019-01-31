@@ -1,8 +1,9 @@
 using System;
-
 namespace OngoingGame {
     public class Player : Humanoid {
-        public Player(string name) : base(name) {
+        private double exp;
+        public Player(string name) : base(name, null) {
+            this.exp = 0;
         }
 
     }
