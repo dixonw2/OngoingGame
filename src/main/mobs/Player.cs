@@ -11,5 +11,9 @@ namespace OngoingGame {
         public byte Level => level;
         public short Exp => exp;
 
+        public void Fight(Hostile enemy) {
+            
+        }
+
     }
 }
