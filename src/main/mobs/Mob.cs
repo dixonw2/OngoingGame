@@ -15,9 +15,35 @@ namespace OngoingGame {
             this.health = health;
         }
 
-        public byte Attack => attack;
-        public byte Defense => defense;
+        public byte Attack {
+            get { 
+                return attack; 
+            }
+            set {
+                attack = value;
+            }
+        }
+        public byte Defense {
+            get {
+                return defense;
+            }
+            set {
+                defense = value;
+            }
+        }
         public string Name => name;
-        public short Health => health;
+        public short Health {
+            get {
+                return health;
+            }
+            set {
+                if (value > 9999)
+                    health = 9999;
+                else if (value < 0)
+                    health = 0;
+                else
+                    health = value;
+            }
+        }
     }
 }
