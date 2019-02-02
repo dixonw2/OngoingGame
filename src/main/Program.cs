@@ -8,7 +8,7 @@ namespace OngoingGame {
             string playerName = Console.ReadLine();
             Player player = new Player("playerName");
             Storm storm = new Storm(player);
-            Console.WriteLine($"Attack: {player.Attack}");
+            
         }
     }
 }

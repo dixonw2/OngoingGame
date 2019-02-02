@@ -98,7 +98,7 @@ namespace OngoingGame {
 
     class TestMob : Hostile {
         private const string name = "Test Mob";
-        public TestMob(Player player) : base(name, player) {
+        public TestMob(Player player) : base(name, player, 0, 0, 100, 100) {
         }
     }
 
