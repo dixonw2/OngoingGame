@@ -6,9 +6,9 @@ namespace OngoingGame {
             Console.Clear();
             Console.Write("What is your name? ");
             string playerName = Console.ReadLine();
-            Player player = new Player("playerName");
+            Player player = new Player(playerName);
             Storm storm = new Storm(player);
-            Console.WriteLine($"Attack: {player.Attack}");
+            player.Fight(storm);
         }
     }
 }

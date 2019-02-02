@@ -91,14 +91,14 @@ namespace OngoingGame {
         }
 
         [TestCase]
-        public void GivenNewPlayer_WhenWinFightTestMob_ThenWin() {
-            Assert.IsTrue(sut.WinFight(new TestMob(sut)));
+        public void GivenNewPlayer_WhenFightTestMob_ThenWin() {
+            Assert.IsTrue(sut.Fight(new TestMob(sut)));
         }
     }
 
     class TestMob : Hostile {
         private const string name = "Test Mob";
-        public TestMob(Player player) : base(name, player) {
+        public TestMob(Player player) : base(name, player, 0, 0, 100, 100) {
         }
     }
 
