@@ -8,12 +8,12 @@ namespace OngoingGame {
 
         [SetUp]
         public void Init() {
-            sut = new Player("test");
+            sut = new Player("System Under Test");
         }
 
         [TestCase]
         public void GivenNewPlayer_WhenGetAttack_Then5() {
-            Assert.AreEqual(5, sut.Attack);
+            Assert.AreEqual(10, sut.Attack);
         }
 
         [TestCase]
@@ -39,26 +39,39 @@ namespace OngoingGame {
         }
 
         [TestCase]
-        public void GivenNewPlayer_WhenSetHealth500_Then500() {
-            sut.Health = 500;
+        public void GivenNewPlayer_WhenSetMaxHealth500_Then500() {
+            sut.MaxHealth = 500;
+            Assert.AreEqual(500, sut.MaxHealth);
+        }
+
+        [TestCase]
+        public void GivenNewPlayer_WhenSetMaxHealth500AndSetCurHealth9999_Then500() {
+            sut.MaxHealth = 500;
+            sut.Health = 9999;
             Assert.AreEqual(500, sut.Health);
         }
 
         [TestCase]
-        public void GivenNewPlayer_WhenSetHealthGreaterThan9999_Then9999() {
-            sut.Health = 10000;
-            Assert.AreEqual(9999, sut.Health);
+        public void GivenNewPlayer_WhenSetMaxHealthGreaterThan9999_Then9999() {
+            sut.MaxHealth = 10000;
+            Assert.AreEqual(9999, sut.MaxHealth);
         }
 
         [TestCase]
-        public void GivenNewPlayer_WhenSetHealthNegative_ThenNegative1() {
+        public void GivenNewPlayer_WhenSetHealthNegative_Then0() {
             sut.Health = -1;
             Assert.AreEqual(0, sut.Health);
         }
 
         [TestCase]
-        public void GivenNewPlayerTest_WhenGetName_ThenTest() {
-            Assert.AreEqual("test", sut.Name);
+        public void GivenNewPlayer_WhenMinusEqualHealth5_Then245() {
+            sut.Health -= 5;
+            Assert.AreEqual(245, sut.Health);
+        }
+
+        [TestCase]
+        public void GivenNewPlayerTest_WhenGetName_ThenSystemUnderTest() {
+            Assert.AreEqual("System Under Test", sut.Name);
         }
 
         [TestCase]
@@ -76,5 +89,17 @@ namespace OngoingGame {
         public void GivenNewPlayer_WhenGetExp_Then0() {
             Assert.AreEqual(0, sut.Exp);
         }
+
+        [TestCase]
+        public void GivenNewPlayer_WhenWinFightTestMob_ThenWin() {
+            Assert.IsTrue(sut.WinFight(new TestMob(sut)));
+        }
     }
+
+    class TestMob : Hostile {
+        private const string name = "Test Mob";
+        public TestMob(Player player) : base(name, player) {
+        }
+    }
+
 }
