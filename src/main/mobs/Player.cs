@@ -2,7 +2,7 @@ using System;
 namespace OngoingGame {
     public class Player : Mob {
 
-        byte level;
+        byte level, skillPoints;
         short exp;
         public Player(string name) : base(name, 10, 5, 250) {
             level = 1;
@@ -15,8 +15,22 @@ namespace OngoingGame {
             set {
                 if (value > 100)
                     level = 100;
-                else
+                else {
                     level = value;
+                    short tempAdd = (short) (this.Attack + 1 + (.06 * (this.Attack / 2)));
+                    if (tempAdd > 255)
+                        tempAdd = 255;
+                    this.Attack = (byte) tempAdd;
+                    tempAdd = (short) (this.Defense + 1 + (.06 * (this.Defense / 2)));
+                    if (tempAdd > 255)
+                        tempAdd = 255;
+                    this.Defense = (byte) tempAdd;
+                    tempAdd = (short) (this.MaxHealth + 40 + (.04 * (this.MaxHealth / 2)));
+                    if (tempAdd > 9999)
+                        tempAdd = 9999;
+                    this.MaxHealth = tempAdd;
+                    skillPoints++;
+                }
             }
         }
         public short Exp => exp;
@@ -55,8 +69,6 @@ namespace OngoingGame {
                     this.Health -= (short) (enemyAttack - this.Defense);
                     printFight(enemy, this, (short) (enemyAttack - this.Defense), false);
                 }
-
-                System.Threading.Thread.Sleep(1000);
 
             }
             if (this.Health > 0)

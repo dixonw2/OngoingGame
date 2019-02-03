@@ -21,7 +21,10 @@ namespace OngoingGame {
                 return attack; 
             }
             set {
-                attack = value;
+                if (value > 255)
+                    attack = 255;
+                else
+                    attack = value;
             }
         }
         public byte Defense {
@@ -29,7 +32,10 @@ namespace OngoingGame {
                 return defense;
             }
             set {
-                defense = value;
+                if (value > 255)
+                    defense = 255;
+                else
+                    defense = value;
             }
         }
         public string Name => name;
