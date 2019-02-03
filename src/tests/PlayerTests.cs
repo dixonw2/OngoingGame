@@ -94,6 +94,35 @@ namespace OngoingGame {
         public void GivenNewPlayer_WhenFightTestMob_ThenWin() {
             Assert.IsTrue(sut.Fight(new TestMob(sut)));
         }
+
+        [TestCase]
+        public void GivenNewPlayer_WhenLevel2_ThenAttack13() {
+            sut.Level++;
+            Assert.AreEqual(11, sut.Attack);
+        }
+
+        [TestCase]
+        public void GivenNewPlayer_WhenLevel53_ThenAttack101() {
+            LevelUp(53);
+            Assert.AreEqual(101, sut.Attack);
+        }
+
+        [TestCase]
+        public void GivenNewPlayer_WhenLevel100_ThenAttack255() {
+            LevelUp(100);
+            Assert.AreEqual(255, sut.Attack);
+        }
+
+        [TestCase]
+        public void GivenNewPlayer_WhenLevel100_ThenMaxHealth9999() {
+            LevelUp(100);
+            Assert.AreEqual(9999, sut.MaxHealth);
+        }
+
+        private void LevelUp(int level) {
+            for (int i = 1; i < level; i++)
+                sut.Level++;
+        }
     }
 
     class TestMob : Hostile {
